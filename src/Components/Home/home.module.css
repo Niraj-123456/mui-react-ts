@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
