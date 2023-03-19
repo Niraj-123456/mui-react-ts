@@ -8,6 +8,9 @@ const Home = lazy(() => import("./Components/Home/Home"));
 const Posts = lazy(() => import("./Components/Posts/Posts"));
 const MovieDetail = lazy(() => import("./Components/MovieDetail/MovieDetail"));
 const PostDetail = lazy(() => import("./Components/PostDetail/PostDetail"));
+const EditPostForm = lazy(
+  () => import("./Components/Form/EditPost/EditPostForm")
+);
 const Pdf = lazy(() => import("./Components/Pdf/Pdf"));
 
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -27,9 +30,10 @@ function App() {
               <NavBar />
               <Routes>
                 <Route path="/posts" element={<Posts />} />
-                <Route path="/:id" element={<PostDetail />} />
+                <Route path="/post/:id" element={<PostDetail />} />
                 <Route path="/pdf" element={<Pdf />} />
                 <Route path="/movie/:id" element={<MovieDetail />} />
+                <Route path="post/:id/edit" element={<EditPostForm />} />
                 <Route path="/" element={<Home />} />
               </Routes>
             </Suspense>

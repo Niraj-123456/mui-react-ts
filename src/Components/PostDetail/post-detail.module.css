@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  padding: 10px 60px;
+}
+
+.content {
+  width: 570px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: justify;
+}
+
+.post__title {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.post__body {
+  font-size: 15px;
+  color: #777777;
+  margin-top: 10px;
+}
+
+.post__actions {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 5px;
+}

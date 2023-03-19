@@ -48,3 +48,25 @@
 .nav__links li a.active {
   color: red;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px 35px;
+  }
+
+  .nav__links li {
+    padding-inline: 0;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 10px 25px;
+  }
+
+  .nav__links li {
+    padding-inline: 0;
+    margin-left: 10px;
+  }
+}

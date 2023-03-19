@@ -4,10 +4,10 @@ import styles from "./posts.module.css";
 
 import WritePost from "../WritePost/WritePost";
 import PostCard from "../Common/PostCard/PostCard";
-import LoadingScreen from "../Common/LoadingScreen/LoadingScreen";
 import { fetchAllPosts } from "../../apis/postApis";
 
 import { useQuery } from "react-query";
+import { Skeleton } from "@mui/material";
 
 interface Post {
   id: number;
@@ -22,7 +22,21 @@ function Posts() {
   });
 
   if (isLoading) {
-    return <LoadingScreen />;
+    return (
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <Skeleton variant="rectangular" width={"100%"} height={80} />
+          {[1, 2, 3, 4].map((_, index) => (
+            <Skeleton
+              key={index}
+              variant="rectangular"
+              width={"100%"}
+              height={300}
+            />
+          ))}
+        </div>
+      </div>
+    );
   }
 
   if (isError) {
@@ -34,7 +48,7 @@ function Posts() {
       <div className={styles.content}>
         <WritePost />
         {data?.map((post: Post) => (
-          <Link key={post?.id} to={`/${post?.id}`}>
+          <Link key={post?.id} to={`/post/${post?.id}`}>
             <PostCard post={post} />
           </Link>
         ))}

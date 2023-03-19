@@ -13,17 +13,18 @@ interface Movie {
 }
 
 const Home = () => {
-  const { isLoading, data, isError, error } = useQuery<Movie[], Error>({
-    queryKey: ["movies"],
-    queryFn: fetchAllMovies,
-  });
+  const { isLoading, data, isError, error } = useQuery<Movie[], Error>(
+    ["movies"],
+    fetchAllMovies,
+    { retry: 2 }
+  );
 
   if (isLoading) {
     return (
       <div className={styles.container}>
         <div className={styles.content}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((_, index) => (
-            <div key={index} style={{ width: "275px" }}>
+            <div key={index} style={{ width: "100%" }}>
               <Skeleton variant="rectangular" width={"100%"} height={250} />
               <div style={{ marginTop: "10px" }}>
                 <Skeleton width={"90%"} />

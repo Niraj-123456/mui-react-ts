@@ -1,0 +1,24 @@
+.comments {
+  margin-top: 15px;
+}
+
+.comments > h3 {
+  font-size: 12px;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.comment {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.comment > p {
+  font-size: 11px;
+  color: #777777;
+}
